@@ -43,6 +43,7 @@ protected:
     int m_target;
     double m_maxBolus;
     Model* m_model;
+    double m_controlInput;
 
 
 public:

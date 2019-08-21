@@ -37,7 +37,9 @@ Receive:  bgInputs and insulin inputs for the model, sensitivity is constant
           representing the impact of 1 unit of insulin on blood glucose.
 Return:   vector<double> predictions for future (1 in this case)
 -----------------------------------------------------------------------------*/
-vector<double> StateSpaceModel::predict(vector<int> bgInputs, vector<float> insulinInputs, bool saveFlag){
+vector<double> StateSpaceModel::predict(vector<int> bgInputs,
+                                        vector<float> insulinInputs,
+                                        bool saveFlag){
     vector<double> bgPredictions;
      bgPredictions.push_back(bgInputs[0]);
      return bgPredictions;
@@ -56,7 +58,9 @@ Receive:  bgInputs and insulin inputs for the model, sensitivity is constant
           representing the impact of 1 unit of insulin on blood glucose.
 Return:   vector<double> predictions for future BG (90 mins / 5 = 18 values)
 -----------------------------------------------------------------------------*/
-vector<double> StateSpaceModel::projectCorrection(vector<double> bgInputs, vector<float> insulinInputs, int sensitivity)
+vector<double> StateSpaceModel::projectCorrection(vector<double> bgInputs,
+                                                  vector<float> insulinInputs,
+                                                  int sensitivity)
 {
     //predict
     vector<double> results;

@@ -20,7 +20,6 @@
 
 #include "MainWindow.h"
 #include <QApplication>
-#include "database.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -146,11 +145,11 @@ int main(int argc, char *argv[])
 
           //MPC SS Optimization
           modelPredictiveControllerSS->calculateControlInput();
-          double inputsSS = modelPredictiveControllerSS->getControlInput();
+
 
           //MPC RF Optimization
           modelPredictiveControllerRF->calculateControlInput();
-          double inputsRF = modelPredictiveControllerRF->getControlInput();
+
 
           //delete objects
           delete modelPredictiveControllerRF;
